@@ -5,7 +5,7 @@ const nextConfig = {
   
   // (ถ้าใช้ Project Pages) กำหนด base path สำหรับ GitHub Pages
   // แทนที่ 'repository-name' ด้วยชื่อ GitHub Repository ของคุณ
-  basePath: process.env.NODE_ENV === 'production' ? 'https://hohokz.github.io/hohokz-web/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? 'https://github.com/Hohokz/hohokz-web' : '',
   
   // ปรับการตั้งค่าอื่นๆ ที่จำเป็นสำหรับ Static Export
   images: {
