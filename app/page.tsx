@@ -9,7 +9,7 @@ export default function Home(): JSX.Element {
         id="next-section"
         className="min-h-screen bg-black text-white flex items-center justify-center"
       >
-        <h2 className="text-4xl tracking-widest">WE ON ONBOARDING</h2>
+        <h2 className="text-4xl tracking-widest p-3">WE ONBOARDING</h2>
       </section>
     </main>
   );
