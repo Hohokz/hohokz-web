@@ -4,10 +4,19 @@ import { JSX, useEffect, useState } from "react";
 
 export type Direction = "left" | "right" | "down" | "normal";
 
-type CursorProps = {
-  enabled: boolean; // ✅ เปิด / ปิด Cursor ทั้งระบบ
-  onDirectionClick: (dir: Direction) => void;
-  onMove: (x: number, y: number) => void;
+export type CursorProps = {
+  /**
+   * เปิด / ปิด Cursor ทั้งระบบ
+   */
+  enabled: boolean;
+  /**
+   * Callback เมื่อคลิกที่ทิศทางต่างๆ
+   */
+  onDirectionClick?: (dir: Direction) => void;
+  /**
+   * Callback เมื่อเมาส์ขยับ ส่งค่า x, y กลับมา
+   */
+  onMove?: (x: number, y: number) => void;
 };
 
 export default function CustomCursor({
@@ -29,7 +38,7 @@ export default function CustomCursor({
       const h = window.innerHeight;
 
       setPos({ x, y });
-      onMove(x, y);
+      onMove?.(x, y);
 
       if (y < 100) {
         setDirection("normal");
@@ -50,7 +59,7 @@ export default function CustomCursor({
 
   return (
     <div
-      onClick={() => onDirectionClick(direction)}
+      onClick={() => onDirectionClick?.(direction)}
       className="
         fixed top-0 left-0 z-[9999]
         pointer-events-auto cursor-pointer
